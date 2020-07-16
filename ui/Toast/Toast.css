@@ -1,0 +1,48 @@
+#toastZone {
+  position: fixed;
+  z-index: 10000;
+  top: 20px;
+  right: 20px;
+}
+
+.toast {
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  margin-bottom: 0;
+  padding: 0;
+  border-radius: 4px;
+  background: #111111;
+  color: #fff;
+  transform: translate(0, 50%) scale(0);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.toast.open {
+  opacity: 1;
+  height: auto;
+  margin-bottom: 10px;
+  padding: 3.2em 7em 1em 2em;
+  transform: none;
+}
+
+.toast__content {
+  margin: 0 0 0.3em;
+  font-size: 1.3rem;
+}
+
+.toast__closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 0;
+  font-size: 20px;
+  background: transparent;
+  color: inherit;
+}
+
+.toast [href] {
+  text-decoration: none;
+  color: #ffe15b;
+}
