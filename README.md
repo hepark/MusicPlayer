@@ -60,16 +60,22 @@ console.log(data.getStatus.call(this));        //😎
 
 #  질문 2. 
 
-네임스페이스를 작성할 떄, 스크립트 페이지 상단마다 모두 적어놓는 게 괜찮을까요?
+네임스페이스를 작성할 떄, 1번처럼 스크립트 페이지 상단마다 모두 적어놓는 게 괜찮을까요?
 왠지 가독성에도 좋을 거 같고, 안전할 것 같기도 한데 이상한 코딩방식인가 싶어서 문의드립니다.
 
 아니면 index.js 같은 곳에 한번만 명시를 하고, <br>
-모든 소스에 window.Y = window.Y || {}; 이걸 적는게 나은 방식인가요?
+IIFE 소스에 2번처럼 적는 게 나은 방식인가요?
 
 ```javascript
-// @namespace
+
+// 1번 방법
   window.Y = window.Y || {};
   var Y = window.Y;
+
+  // 2번 방법
+  (function(Y) {
+    ---
+  })((window.Y = window.Y || {};))
 ```
 
 감사합니다.
